@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html> <!-- start html -->
+<head> <!-- start head -->
+  <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PRUEBA</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head> <!-- end head -->
+
+<body> <!-- start body -->
+<div class="container"> <!-- start container -->
+	<div class="row">
+		<div class="col-xs-2"> <!-- logo -->
+		LOGO
+		</div> 
+		<div class="col-xs-10"> <!-- navegador -->
+		NAVEGADOR
+		</div>
+	</div>	
+
+	<div class="row">
+		<div class="col-xs-12" style="margin-top: 30px;">
+            <div class="col-xs-6" style="margin: 30px 0px;">
+                <a class="btn btn-primary" href="/">Home</a>
+            </div> 
+            <div class="col-xs-6" style="margin: 30px 0px;" > 
+                <a class="btn btn-success" href="/admin/products/add">Agregar Productos</a>	
+            </div>
+            
+            <h1>LISTADO DE PRODUCTOS: </h1>
+            <br>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% products.map(function(product){ %>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td><%= product.name %></td>
+                          <td><img style="width:40px;height: 40px;" src="/img/products/<%= product.img %>" alt="imagen de producto"></td>
+                          <td><%= product.price %></td>
+                          <td><%= product.stock %></td>
+                          <td>
+                            <a href="/admin/products/detail/<%=product.id%>">Ver Producto</a>
+                            <a href="/admin/products/edit/<%=product.id%>">Modificar</a>
+                            <form onsubmit="return pregunta()" action="/admin/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                               <button type="submit" >Borrar producto</button>
+                            </form>
+                          </td>
+                        </tr>
+                    <% }) %>  
+                </tbody>
+              </table>
+        </div> 
+	</div>	
+
+	<div class="row">
+		<div class="col-xs-4"> DIRECCION </div> 
+		<div class="col-xs-4"> MAIL	</div>
+		<div class="col-xs-4"> MENU	</div>
+	</div>	
+
+
+
+
+
+</div> <!-- end container -->
+<script>
+    // function confirmar_envio(){
+    // if (confirm('Estas seguro de enviar los datos de este formulario ?'))
+    // {
+    //         document.frm_registro.submit()
+    //      }
+    // }
+    function pregunta() {
+        return confirm('¿Confirma los datos?');
+    }
+</script>
+
+</body> <!-- end body -->
+</html> <!-- end html -->

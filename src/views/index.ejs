@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+
+		<header class="header">
+            <nav class="navbar">
+                <h1 class="logo">allHome</h1>
+
+                <label class="labe_hamburguesa" for="menu_hamburguesa">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        fill="currentColor"
+                        class="list_icon"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                        />
+                    </svg>
+                </label>
+
+                <input class="menu_hamburguesa" type="checkbox" name="" id="menu_hamburguesa">
+
+                <ul class="ul_links">
+                    <li class="li_links">
+                        <a href="/admin/product" class="link">Admin</a>
+                    </li>
+                    <li class="li_links">
+                        <a href="#contact" class="link">Escribenos</a>
+                    </li>
+                    <li class="li_links">
+                        <a href="#product" class="link">Productos</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+		
+
+		<header class="header_1">
+			<h1>Tienda</h1>
+
+			<div class="container-icon">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="icon-cart"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+					/>
+				</svg>
+				<div class="count-products">
+					<span id="contador-productos">0</span>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="cart-product">
+						<div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Zapatos Nike</p>
+                            <span class="precio-producto-carrito">$80</span>
+                        </div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="icon-close"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6 18L18 6M6 6l12 12"
+							/>
+						</svg>
+					</div>
+                    <div class="cart-total">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+				</div>
+			</div>
+		</header>
+
+		<div class="slide">
+			<img src="/img/h1.jpg" alt="">
+		</div>
+
+		<section class="produc-title" id="product">
+			<h3>Productos</h3>
+		</section>
+		
+		<section class="cards_products" >
+	<% products.map(function(product){ %>		
+			<div class="card">
+				<div class="content_card">
+					<figure>
+						<img src="/img/products/<%= product.img %>" alt="producto" />
+					</figure>
+					<div class="card-text">
+						<h2><%= product.name %></h2>
+						<p class="price">S./<%= product.price %></p>
+					</div>
+				</div>
+				<div class="footer_card">
+					<button>Añadir al Carrito</button>
+				</div>
+			</div>
+	<% }) %>		
+		</section>
+
+        <script>
+            const btnCart = document.querySelector('.container-icon')
+            const containerCartProducts = document.querySelector('.container-cart-products')
+
+            btnCart.addEventListener('click', () => {
+                containerCartProducts.classList.toggle('hidden-cart')
+            })
+        </script>
+	<footer>
+		<div>
+			<p class="title">Visitanos</p>
+			<p>Av. Bausate Meza 1288, Lima</p>
+		</div>
+		<div>
+			<p class="title">Llamanos</p>
+			<p> Tel: 51-7545321</p>
+			<p> Cel: 51-956754392</p>
+		</div>
+		<div>
+			<p class="title">E-mail</p>
+			<p>ventallHome@allhome.com</p>
+		</div>
+		<div>
+			<p class="title" id="contact">Unete a Nuestra lista de correos</p>
+			<p><input type="text" name="" id=""></p>
+			<p><button type="button">Unirse</button></p>
+
+		</div>
+	</footer>
+	</body>
+</html>
