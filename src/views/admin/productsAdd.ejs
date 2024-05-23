@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html> <!-- start html -->
-<head> <!-- start head -->
-    <meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PRUEBA</title>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head> <!-- end head -->
-
-<body> <!-- start body -->
+<%- include('../partials/head') %>
 <div class="container"> <!-- start container -->
-	<div class="row">
-		<div class="col-xs-2"> <!-- logo -->
-		LOGO
-		</div> 
-		<div class="col-xs-10"> <!-- navegador -->
-		NAVEGADOR
-		</div>
-	</div>	
-
-	<div class="row">
+    <%- include('../partials/nav') %>
+	<br><br><br><br>
+    <div class="row">
 		<div class="col-xs-12">
             <div class="col-xs-6">
                 <a class="btn btn-primary" href="/">Home</a>
@@ -70,19 +46,5 @@
             </form>
         </div> 
 	</div>	
-
-	<div class="row">
-		<div class="col-xs-4"> DIRECCION </div> 
-		<div class="col-xs-4"> MAIL	</div>
-		<div class="col-xs-4"> MENU	</div>
-	</div>	
-
-
-
-
-
 </div> <!-- end container -->
-
-
-</body> <!-- end body -->
-</html> <!-- end html -->
+<%- include('../partials/footer') %>

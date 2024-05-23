@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<html> <!-- start html -->
-<head> <!-- start head -->
-    <meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PRUEBA</title>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head> <!-- end head -->
-
-<body> <!-- start body -->
+<%- include('../partials/head') %>
 <div class="container"> <!-- start container -->
-	<div class="row">
-		<div class="col-xs-2"> <!-- logo -->
-		LOGO
-		</div> 
-		<div class="col-xs-10"> <!-- navegador -->
-		NAVEGADOR
-		</div>
-	</div>	
+	<%- include('../partials/nav') %>
+	<br><br><br><br>	
 
 	<div class="row">
 		<div class="col-xs-12">
@@ -41,11 +18,16 @@
                   <label for="name" class="form-label">Nombre</label>
                   <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
                 </div>
-                <div class="mb-3">
+                <br>
+                <div>
                     <label for="product_img" class="form-label">Imagen</label>
-                    <input type="file" name="product_img">
+                    <img id="img1" src="/img/products/<%= product.img %>" alt="imagen de producto">
                 </div>
 
+                <div class="mb-3">
+                    <input id="inputFile1" type="file" name="product_img">
+                </div>
+                <br>
                 <div class="mb-3">
                     <label for="price" class="form-label">Precio</label>
                     <input type="number" class="form-control" id="price" name="price" value="<%= product.price %>">
@@ -71,18 +53,5 @@
         </div> 
 	</div>	
 
-	<div class="row">
-		<div class="col-xs-4"> DIRECCION </div> 
-		<div class="col-xs-4"> MAIL	</div>
-		<div class="col-xs-4"> MENU	</div>
-	</div>	
-
-
-
-
-
 </div> <!-- end container -->
-
-
-</body> <!-- end body -->
-</html> <!-- end html -->
+<%- include('../partials/footer') %>

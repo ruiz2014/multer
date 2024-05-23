@@ -1,0 +1,19 @@
+  
+#img1{
+    width:70px;
+}
+.footer-bottom {  
+        width: 100%; 
+        height: 40px; 
+        padding: 25px 0;  
+        text-align: center;  
+        color: #fff;  
+        background: rgb(35, 37, 39);  
+        position: absolute;
+        bottom: 0;
+        line-height: 5px;
+}  
+
+.inline{
+    display:inline;
+}    

@@ -88,7 +88,15 @@ ol,ul{
     color: var(--color_blanco);
     font-weight: 600;
     /* background-color: var(--color_primario); */
+    background-color: #12051c00;
 }
+
+.link:hover{
+    color: rgb(187, 181, 181);
+}
+/* span:hover{
+
+} */
 
 /* @media (min-width:768px){
     .labe_hamburguesa {
@@ -242,6 +250,26 @@ img{
 .slide img{
     width: 100%;
 }
+.feature{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 20px; */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.box-feature{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f7f7efbf;
+    padding:20px;
+    text-align: center;
+    border: 5px solid white;
+}
+.box-feature svg{
+    width: 50%;
+    height: 50%;
+}
 .produc-title{
     padding:2rem;
 }
@@ -254,7 +282,6 @@ img{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -346,6 +373,10 @@ img{
     cursor: pointer;
     width: 100%;
 }
+.footer_card button:hover{
+    background-color: #5b5a5a;
+    color: #d8cece;
+}
 .price{
     font-size: 18px;
     font-weight: 700;
@@ -403,17 +434,22 @@ footer button{
     padding: 7px 1px;
 }
 
+footer button:hover{
+    background-color: #466659d6;
+    color: #b0aaaa; 
+}
+
 @media (min-width: 500px) {
-    
+    .box-feature {
+        flex-direction: row;
+    }
 }
 @media (min-width: 650px) {
     .card{
-        /* flex:100%; */
-        /* margin:10px;
-        border:5px solid black;
-        display:flex;
-        flex-direction: column; */
     } 
+    .feature {
+        grid-template-columns: repeat(4, 1fr);
+      }
 }
 @media (min-width:768px){
     .labe_hamburguesa {
@@ -429,12 +465,7 @@ footer button{
     .link{
         font-size: 1.2rem;
         transition: all .3s;
-        padding: .2rem .7rem;
-        /* background-color: none; */
     }
-    /* .link:hover{
-        background-color: #5f1192;
-    } */
 }
 @media (min-width: 800px) {
     footer{
